@@ -1,5 +1,5 @@
 # Arduino-PRO-Portenta-C33 Demo
-Arduino sketch example demonstrating connection of an[Arduino PRO Portenta C33]([url](https://docs.arduino.cc/hardware/portenta-c33)) to IoTConnect on AWS via Wi-Fi.  The sketch publishes a random simulated temperature reading plus the current UTC time (acquired via online NTP servers) at 1 minute intervals.  Commands sent from IoTConnect to the Portenta C33 are also received and printed to the serial monitor.
+Arduino sketch example demonstrating connection of an [Arduino PRO Portenta C33]([url](https://docs.arduino.cc/hardware/portenta-c33)) to IoTConnect on AWS via Wi-Fi.  The sketch publishes a random simulated temperature reading plus the current UTC time (acquired via online NTP servers) at 1 minute intervals.  Commands sent from IoTConnect to the Portenta C33 are also received and printed to the serial monitor.
 
 # Security & Authentication
 Security and authentication are based on a self-signed X.509 certificate inserted into the "arduino_secrets.h" file but are not shown for security purposes.  Note that all SSIDs, passwords, topics, device keys, and certificates are placed in "arduino_secrets.h" file. 
