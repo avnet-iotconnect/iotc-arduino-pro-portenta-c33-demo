@@ -49,6 +49,11 @@ Once your prerequisites are satisfied you will need to create a virtual device o
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/3ac659ae-f963-40ab-a941-f4b52845f18b)
 
-3. 
+3. At this point you could create your own template if you wanted to change the data sent to IoTConnect or the authentication type.  There is a template file (PortentaC33_template.JSON) included in this repo which you can import using the  'Import' button at the upper right of the screen
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/f52607bf-6a29-41e6-b69d-cfaf54086eb5)
+
+4.
+
  
 
