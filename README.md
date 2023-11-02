@@ -82,12 +82,12 @@ Once your prerequisites are satisfied you will need to create a virtual device o
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/cf91de64-23c6-4943-b477-766394bea9fc)
 
 
-6.  Copy the following information from this IoTConnect window into your **arduino_secrets.h** file:
-     - Copy the **#host** field into your local **arduino_secrets.h** file for the **SECRET_BROKER** field.
-     - Copy the **#clientID** field into your local **arduino_secrets.h** file for the **SECRET_CLIENT_ID** field
-     - Copy the **#reporting** field into your local **arduino_secrets.h** file for the **SECRET_TOPIC** field
-     - Copy the **#acknowledgement** field into your local **arduino_secrets.h** file for the **SECRET_ACK_TOPIC** field
-     - Copy the **#cloudToDevice** field into your local **arduino_secrets.h** file for the **SECRET_CMD_TOPIC** field
+6.  Copy the following information from this IoTConnect **Connection Info** window into your **arduino_secrets.h** file:
+     - Copy the **#host** field and paste into your local **arduino_secrets.h** file in the **SECRET_BROKER** field.
+     - Copy the **#clientID** field and paste into your local **arduino_secrets.h** file in the **SECRET_CLIENT_ID** field
+     - Copy the **#reporting** field and paste into your local **arduino_secrets.h** file in the **SECRET_TOPIC** field
+     - Copy the **#acknowledgement** field and paste into your local **arduino_secrets.h** file in the **SECRET_ACK_TOPIC** field
+     - Copy the **#cloudToDevice** field and paste into your local **arduino_secrets.h** file in the **SECRET_CMD_TOPIC** field
   
  Your **arduino_secrets.h** file should have a section resembling the following:
 
@@ -98,7 +98,7 @@ Once your prerequisites are satisfied you will need to create a virtual device o
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/53564fea-b8d2-4b20-967c-cf04b36e3024)
 
 
-
+Unzip the file into a local directory.  You will need to open each file with Notepad or similar text editor program.
 
 
 
