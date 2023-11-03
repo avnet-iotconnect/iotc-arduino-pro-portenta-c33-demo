@@ -18,11 +18,15 @@ With the vast number of Arduino libraries available, locating a suitable library
 - [Arduino Connection Handler v0.7.7 by Ubi de Feo, Christian Maglie...](https://github.com/arduino-libraries/Arduino_ConnectionHandler)
 - [NTPClient v3.2.1 by Fabrice Weinberg](https://github.com/arduino-libraries/NTPClient)
 
-Avnet also provides libraries and SDKs to accelerate your development effort.  Please refer to the [IoTConnect documentation](https://docs.iotconnect.io/iotconnect/) for more information.
+Avnet also provides libraries and SDKs to accelerate your IoTConnect development effort.  Please refer to the [IoTConnect documentation](https://docs.iotconnect.io/iotconnect/) for more information.
 
 # Prerequisites
 1. An [Arduino Portenta C33 SOM](https://www.newark.com/arduino/abx00074/arduino-portenta-c33-rohs-compliant/dp/77AK2285)
-2. A suitable Wi-Fi/BLE antenna connected to the C33.  This should be furnished with the C33.  Refer to the Arduino instructions for attachment.
+2. A suitable Wi-Fi/BLE antenna connected to the C33.  This should be furnished with the C33.  Refer to the [Arduino C33 User Manual](https://docs.arduino.cc/tutorials/portenta-c33/user-manual) for details.
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/d4de69a6-3fbb-426f-a634-0b8b03e0d08c)
+
+
 3. A suitable USB cable to connect your development PC to the C33.  The C33 has a USB-C connector for both data and power.
 4. A working installation of the Arduino IDE (v2.2.1 or later)
 5. The previously listed Arduino libraries installed.
@@ -71,34 +75,94 @@ Once your prerequisites are satisfied you will need to create a virtual device o
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/727e7dd2-728b-4ac9-9541-ac42d118e7af)
 
-4.  Your virtual device should now appear in the list of Devices and clicking on the leftmost field should take you to the device's **Info Screen**
-
-![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/de153739-4913-4a3f-8d5f-d9ae80d1b183)
+4.  Your virtual device should now appear in the list of Devices and clicking on its **Unique ID** field should take you to the device's **Info Screen** as shown here:
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/d3e56bee-14ae-4b70-8ac3-6ca8f7a0f561)
 
-5.  Click on 'Connection Info' towards the upper right of the screen.  A window will open which contains vital information for your device to connect to IoTConnect
+
+5.  Click on the **'Connection Info'** text below the red **'Disconnected** icon and proceed to the next section
+
+ ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/046ac427-7543-4c3b-b27d-e5d68f664d34)
+
+
+
+# Copy Device Information
+So far we have obtained a device template and with it, we created a virtual device on IoTConnect.  The virtual device contains information that your actual device will use to communicate with IoTConnect.  Let's get that information and place it into your local Portenta C33 file called '**arduino_secrets.h**
+
+1.  When you clicked on 'Connection Info' in the previous step, a window opened containing vital information for your device to connect to IoTConnect.  Notice that field **names** are on the left preceeded by a '#' and the **'values** are on the right.
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/cf91de64-23c6-4943-b477-766394bea9fc)
 
 
-6.  Copy the following information from this IoTConnect **Connection Info** window into your **arduino_secrets.h** file:
-     - Copy the **#host** field and paste into your local **arduino_secrets.h** file in the **SECRET_BROKER** field.
-     - Copy the **#clientID** field and paste into your local **arduino_secrets.h** file in the **SECRET_CLIENT_ID** field
-     - Copy the **#reporting** field and paste into your local **arduino_secrets.h** file in the **SECRET_TOPIC** field
-     - Copy the **#acknowledgement** field and paste into your local **arduino_secrets.h** file in the **SECRET_ACK_TOPIC** field
-     - Copy the **#cloudToDevice** field and paste into your local **arduino_secrets.h** file in the **SECRET_CMD_TOPIC** field
+2.  Copy the following information from this IoTConnect **Connection Info** window into your **arduino_secrets.h** file.  Copy the text by clicking on the **copy** icon:
+     - Copy the **#host** value and paste into your local **arduino_secrets.h** file in the **SECRET_BROKER** value
+     - Copy the **#clientID** value and paste into your local **arduino_secrets.h** file in the **SECRET_CLIENT_ID** value
+     - Copy the **#reporting** value and paste into your local **arduino_secrets.h** file in the **SECRET_TOPIC** value
+     - Copy the **#acknowledgement** value and paste into your local **arduino_secrets.h** file in the **SECRET_ACK_TOPIC** value
+     - Copy the **#cloudToDevice** value and paste into your local **arduino_secrets.h** file in the **SECRET_CMD_TOPIC** value
   
- Your **arduino_secrets.h** file should have a section resembling the following:
+ A section of your **arduino_secrets.h** file should resemble the the one shown here:
 
  ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/ede769cf-7d82-474d-b165-e3bd374ecbb5)
 
- 7.  Click on the download certificates icon in the upper right.  This will download a zip file containing the device certificate and private key to your PC in the default download directory.  You may close the IoTConnect **Connection Info** window at this point. The contents of the zip file are as shown:
+ 3.  Go back to the **Connection Info** window and click on the download certificates icon in the upper right.  This will download a zip file containing the device certificate and private key to your PC in the default download directory.  You may close the IoTConnect **Connection Info** window at this point.  The certificate & key you just downloaded allow IoTConnect to authenticate your C33.  The contents of the zip file are as shown.  Yours may differ slightly:
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/53564fea-b8d2-4b20-967c-cf04b36e3024)
 
 
-Unzip the file into a local directory.  You will need to open each file with Notepad or similar text editor program.
+Unzip the files into a local directory. We will go back to them shortly. 
+
+ 4.  For added security, your C33 should authenticate IoTConnect to ensure it is not communicating with an imposter.  To enable that, you will need an AWS root CA certificate (as this version of IoTConnect is on AWS).  You can find that root CA [HERE](https://www.amazontrust.com/repository/SFSRootCAG2.pem) which opens another window (or tab) in your browser with text like this:
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/a2787a33-a869-467d-81ba-a785e87dcfcc)
+
+Select all of the text (Windows users can use **Ctrl A**) and copy it (**Ctrl C**)
+
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/49505712-c465-4f52-b3dc-2079d40b62f8)
+
+
+Go to your local **arduino_secrets.h** file and move your cursor to line 15.  Highlight the text "Insert AWS RooT CA here" and paste **(Ctrl V)** the copied text in its place.  It should look like this:
+
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/85cb5083-f9eb-4f4b-9ec6-0b421c58af98)
+
+
+ 5.  Okay, we are almost there.  Going back to the 2 files you unzipped in step 3:
+- cert_MyPortentaDemo.crt  (device certificate)
+- pk_MyPortentaDemo.pem    (private key)
+
+You next step is to open each of these files in a word editor (I use Notepad.exe).  You will copy the entire contents and paste it into your local **arduino_secrets.h** file just like you did with the AWS Root CA.
+
+Let's start with **cert_MyPortentaDemo.crt**.  Open **Notepad** then drag the **cert_MyPortentaDemo.crt** icon into the Notepad window.  The text should almost exactly like the AWS Root CA text. 
+- In Notepad, select all of the text using **Ctrl A** then copy it using **Ctrl C**
+- Navigate to your local **arduino_secrets.h** file line 21
+- Highlight the text **"Insert Device Cert here"** and paste the copied text using **Ctrl V**
+
+
+You will do the same with **pk_MyPortentaDemo.pem**.  Open **Notepad** then drag the **pk_MyPortentaDemo.pem** icon into the Notepad window.
+- In Notepad, select all of the text using **Ctrl A** then copy it using **Ctrl C**
+- Navigate to your local **arduino_secrets.h** file line 18
+- Highlight the text **"Insert Key here"** and paste the copied text using **Ctrl V**
+
+# Enter Your Wi-Fi Details
+In your local **arduino_secrets.h** file, enter the SSID of your Wi-Fi network in between the quotes for **SECRET_SSID** (line 2).
+
+Next, enter your Wi-Fi password in between the quotes for **SECRET_PASS**
+
+**SAVE YOUR arduino_secrets FILE !!!**
+
+# Connect your C33 board to your PC using the USB cable
+
+# Compile and Download the Code
+
+# View the Telemetry
+
+# Send a Command
+
+# Go Further
+
+
 
 
 
