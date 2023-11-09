@@ -153,15 +153,37 @@ Next, enter your Wi-Fi password in between the quotes for **SECRET_PASS**
 **SAVE YOUR arduino_secrets FILE !!!**
 
 # Connect your C33 board to your PC using the USB cable
+See the Portenta [C33 User Manual](https://docs.arduino.cc/tutorials/portenta-c33/user-manual#powering-the-board) for more information on connecting and powering the C33. 
 
 # Compile and Download the Code
+If the IDE connects to your board, the 'Upload' button will compile and download the sketch to your C33
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/46fe380f-7c11-41e9-a9c8-797df285f8af)
+
 
 # View the Telemetry
+Once the downloader has finished, open the **'Serial Monitor'** to see the messages to/from the C33 viewable at the bottom of the Arduino IDE
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/31172848-ff68-4237-9df8-b096efff427d)
+
+
+
+View the data on IoTConnect by navigating to Devices->Device->Live Data in your browser
+
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/0b5d1745-005b-4347-b8e0-bac02ccaf9e1)
+
 
 # Send a Command
+Click on **'Command'** on the left.  The screen below will be shown:
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/1435c583-9d0a-4b06-a1ff-2fdf1eab48ff)
+
+On the **'Command'** drop down select **'Send Line'** which simply sends whatever you type in the **'Parameter Value'** field.
+Click on **'Execute Command'** button and your text should show up in the **'Serial Monitor'**.
 
 # Go Further
-
+There are many more capabilities and tools available to you from Avnet.  Contact your Avnet resource for more information.
 
 
 
