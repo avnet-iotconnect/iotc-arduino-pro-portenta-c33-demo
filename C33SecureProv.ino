@@ -6,7 +6,7 @@
 #include <ArduinoJson.h>
 #include <TimeLib.h>
 #include <time.h>
-#include "sketch_secrets.h"
+#include "arduino_secrets.h"
 #include <Arduino_ConnectionHandler.h>
 #include <arduino-timer.h>
 
