@@ -17,6 +17,7 @@ With the vast number of Arduino libraries available, locating a suitable library
 - [Arduino-timer v3.0.1 by Michael Contreras](https://github.com/contrem/arduino-timer/tree/master): 
 - [Arduino Connection Handler v0.7.7 by Ubi de Feo, Christian Maglie...](https://github.com/arduino-libraries/Arduino_ConnectionHandler)
 - [NTPClient v3.2.1 by Fabrice Weinberg](https://github.com/arduino-libraries/NTPClient)
+- [Time by Michael Margolis v1.6.1 ](https://playground.arduino.cc/Code/Time/)
 
 Avnet also provides libraries and SDKs to accelerate your IoTConnect development effort.  Please refer to the [IoTConnect documentation](https://docs.iotconnect.io/iotconnect/) for more information.
 
@@ -29,9 +30,13 @@ Avnet also provides libraries and SDKs to accelerate your IoTConnect development
 
 3. A suitable USB cable to connect your development PC to the C33.  The C33 has a USB-C connector for both data and power.
 4. A working installation of the Arduino IDE (v2.2.1 or later)
-5. The previously listed Arduino libraries installed.
-6. Download of all files in this repository
-7. A working IoTConnect account.  Request a free trial account if you don't already have one.
+5. ALL previously listed Arduino libraries installed in the Arduino IDE.
+6. Create a folder named **C33SecureProv** in your local Sketchbook directory.
+
+![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/bee89000-e56e-4cdd-aa00-3bb837250244)
+
+7. Download files **C33SecureProv.ino** and **arduino_secrets.h** from this repository into your local **C33SecureProv** folder that you just created.
+8. A working IoTConnect account.  Request a free trial account if you don't already have one.
 
 # Request a Free IoTConnect Trial Account
 Avnet's IoTConnect platform is available on either AWS or Microsoft Azure although this demo runs exclusively on the AWS version.
