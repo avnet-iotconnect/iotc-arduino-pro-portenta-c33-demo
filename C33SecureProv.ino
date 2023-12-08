@@ -54,8 +54,7 @@ void setup() {
   // Refer to the IoTConnect D2C documentation for formatting 
   JsonObject data = doc["d"][0].createNestedObject("d");      
   data["Temperature"] = 0;
-  data["text"] = "HELLO FROM C33!!";
-  serializeJson(doc, msg_buffer);                                                      
+  data["text"] = "HELLO FROM C33!!";                                                     
    
 }
 
