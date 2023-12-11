@@ -30,7 +30,7 @@ Avnet also provides libraries and SDKs to accelerate your IoTConnect development
 
 3. A suitable USB cable to connect your development PC to the C33.  The C33 has a USB-C connector for both data and power.
 4. A working installation of the Arduino IDE (v2.2.1 or later)
-5. A working IoTConnect account.  Request a free trial account if you don't already have one.
+5. A working IoTConnect account **on AWS**.  Request a free trial account if you don't already have one.
 
 # Request a Free IoTConnect Trial Account
 Avnet's IoTConnect platform is available on either AWS or Microsoft Azure although this demo runs exclusively on the AWS version.
