@@ -41,6 +41,7 @@ The IoTConnect team will release a self-sign-up portal for new customers to requ
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/ac5f47dd-4a27-40e6-8d7f-78d9faea0d26)
 
 Search for the libraries by name and install them.  This example was created using the versions shown which will likely have been updated.  The demo may or may not work with newer libraries so install at your own risk.
+
 2. Next you will need to create a working folder for the Sketch.  On the IDE, navigate to **File->Preferences..**.  On the popup window, the first line should show your Sketchbook location.  Use File Explorer to navigate to this location and make a new folder there called **"C33SecureProv"**  
 3. Download the files from this repository into the **"C33SecureProv"** folder you just created.  This README.md file is not required.  
 4. You should now see the **C33SecureProv.ino** file in your Sketchbook folder.  You can open the Sketch for editing.
