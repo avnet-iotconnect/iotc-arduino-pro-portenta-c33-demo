@@ -12,7 +12,6 @@ Security and authentication are based on an X.509 certificate inserted into the 
 # Arduino Libraries
 With the vast number of Arduino libraries available, locating a suitable library may sometimes slow development.  This demo utilizes the Arduino libraries listed below which will need to be installed prior to compiling the sketch should you choose to use them.  
 - [MQTT Client v0.1.7 by Arduino](https://github.com/arduino-libraries/ArduinoMqttClient)
-- [ESP_SSL Client v2.1.7 by Mobizt](https://github.com/mobizt/ESP_SSLClient)
 - [ArduinoJson v6.21.3 by Benoit Blanchon](https://arduinojson.org/)
 - [Arduino-timer v3.0.1 by Michael Contreras](https://github.com/contrem/arduino-timer/tree/master): 
 - [Arduino Connection Handler v0.7.7 by Ubi de Feo, Christian Maglie...](https://github.com/arduino-libraries/Arduino_ConnectionHandler)
@@ -29,15 +28,15 @@ Avnet also provides libraries and SDKs to accelerate your IoTConnect development
 
 
 3. A suitable USB cable to connect your development PC to the C33.  The C33 has a USB-C connector for both data and power.
-4. A working installation of the Arduino IDE (v2.2.1 or later)
+4. A working installation of the Arduino IDE (v2.2.1 or later).  You may use the cloud based IDE which was not used to create this demo.  Your setup procedures may differ!
 5. A working IoTConnect account **on AWS**.  Request a free trial account if you don't already have one.
 
 # Request a Free IoTConnect Trial Account
-Avnet's IoTConnect platform is available on either AWS or Microsoft Azure although this demo runs exclusively on the AWS version.
+Avnet's IoTConnect platform is available on either AWS or Microsoft Azure although **this demo runs exclusively on the AWS version.**
 The IoTConnect team will release a self-sign-up portal for new customers to request a free trial account.  The scheduled release is Jan 2024.  Until then, you can send an email to [info@iotconnect.io](mailto:info@iotconnect.io) or visit the [Contact us](https://www.avnet.com/wps/portal/us/solutions/iot/contact-us/) page on Avnet.com.
 
 # Getting Started
-1. Once your prerequisites are obtained, you will need to setup the IDE by installing the list of Arduino libraries mentioned above.  Use the IDE to install them by clicking on the **'Library Manager Icon'** on the left side of the IDE as shown here:
+1. Once your prerequisites are obtained, if you are using a local IDE you will need to setup the project by installing the list of Arduino libraries mentioned above.  Use the IDE to install them by clicking on the **'Library Manager Icon'** on the left side of the IDE as shown here:
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/ac5f47dd-4a27-40e6-8d7f-78d9faea0d26)
 
