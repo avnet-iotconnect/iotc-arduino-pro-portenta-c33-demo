@@ -1,5 +1,5 @@
 #include <WiFiC3.h>
-#include <ESP_SSLClient.h>
+#include "WiFiSSLClient.h"
 #include <WiFiUdp.h>
 #include <NTPClient.h>
 #include <MqttClient.h>
@@ -21,8 +21,7 @@ WiFiUDP NTPUdp;
 NTPClient timeClient(NTPUdp,"pool.ntp.org");
              
 // Clients
-ESP_SSLClient ssl_client;
-WiFiClient wfi_client;
+WiFiSSLClient ssl_client;
 MqttClient mq_client(ssl_client);
 
 void setup() {
@@ -38,8 +37,7 @@ void setup() {
   ssl_client.setCACert(SECRET_ROOTCERT);
   ssl_client.setCertificate(SECRET_DEVCERT);
   ssl_client.setPrivateKey(SECRET_PRIKEY);
-  ssl_client.setDebugLevel(1);  // 0=none; 1=error; 2=warn; 3=info; 4=dump
-  ssl_client.setClient(&wfi_client);
+
   
   // Init MQTT client
   mq_client.setId(SECRET_CLIENT_ID);
@@ -54,8 +52,8 @@ void setup() {
   // Refer to the IoTConnect D2C documentation for formatting 
   JsonObject data = doc["d"][0].createNestedObject("d");      
   data["Temperature"] = 0;
-  data["text"] = "HELLO FROM C33!!";                                                     
-   
+  data["text"] = "HELLO FROM C33!!";
+    
 }
 
 
@@ -66,9 +64,7 @@ void loop() {
 
   if (conStatus == NetworkConnectionState::CONNECTED){
     timeClient.update();
-    if (!mq_client.connected()) {    // MQTT client is disconnected, set validation time & connect
-      Serial.println("Setting X509 time");
-      ssl_client.setX509Time(timeClient.getEpochTime());
+    if (!mq_client.connected()) {    
       connectMQTT();
     }
   }
@@ -116,6 +112,7 @@ void connectMQTT(){
 
 void onMQTTMessage(int messageSize){
    // we received a message, print out the topic and contents
+  Serial.println();
   Serial.print("Received ");
   Serial.print(messageSize);
   Serial.print(" bytes from topic: ");
@@ -134,6 +131,8 @@ bool publishData(void *) {
     Serial.print("Posting msg to topic: ");
     doc["d"][0]["d"]["Temperature"] = random(1, 212);
     doc["d"][0]["d"]["text"] = timeClient.getFormattedTime();
+    serializeJson(doc, Serial);
+    Serial.println();
     mq_client.beginMessage(SECRET_TOPIC);
     serializeJson(doc, mq_client);
     mq_client.endMessage();
