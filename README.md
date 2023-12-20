@@ -47,13 +47,18 @@ Search for the libraries by name and install them.  This example was created usi
 4. You should now see the **C33SecureProv.ino** file in your Sketchbook folder.  You can open the Sketch for editing.
 
 # Creating a Device Template
-In the next few steps, you will create a virtual device on IoTConnect.  Each virtual device is based on a 'template' which is a self-contained file that defines the message protocol, attributes, commands, and authentication method.  A high level outline of the required steps is as follows:
+Creating a device template is the first step in setting up IoTConnect to work with your device.  A device template is a self-contained file that defines the message protocol, attributes (data types), commands, and authentication method.  For this demo, a template has been created for you.  If you were to start from scratch, the template creation screens simplify the process. With that, a high level outline of the required steps for device onboarding is as follows:
 
-    - In IoTConnect create a device template  
+    - In IoTConnect create a device template (completed)
     - In IoTConnect create a virtual device based on the template
     - IoTConnect will create a device certificate & key which, when downloaded to your C33, uniquely identifies your device to IoTConnect and enables encrypted communications
     - Complete the 'arduino_secrets.h' file with information from your virtual device (along with your Wi-Fi network parameters).
     - Compile and download the demo code to the C33
+    - Observe the data exchanged on IoTConnect and your local Arduino IDE
+    - Send commands from IoTConnect to your device
+    
+    
+
 1. From the IoTConnect main screen, click on the 'Devices' icon which looks like an IC, then click on 'Device'
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/256b54ad-6d40-4cab-a7b0-8d568324e7af)
@@ -62,15 +67,7 @@ In the next few steps, you will create a virtual device on IoTConnect.  Each vir
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/3ac659ae-f963-40ab-a941-f4b52845f18b)
 
-3. Search the existing templates for one called "PortentaC33Demo_template.JSON".  If it is listed, you can skip this section and proceed to **Create a Virtual Device**.  If not, import the template from the ([PortentaC33Demo_template.JSON](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/blob/main/PortentaC33Demo_template.JSON)) file included in this repo.  To import it, use the 'Import' button at the upper right of the screen
-
-![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/f52607bf-6a29-41e6-b69d-cfaf54086eb5)
-
-4. A popup window will appear and allow you to browse for the template on your PC.
-
-![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/107dcb84-161f-409e-8e76-fb2a9ff64b50)
-
-5.  Click 'Save'.  The template should now be visible in the list of templates.  If you received a warning message about the template already exists you can procede to the next section.
+3. Search the existing templates for one called "PortentaC33Demo_template.JSON".  Remember or write down this name, you will use it in the **Create a Virtual Device** procedure below.  If not, double check that you are using an AWS based IoTConnect tenant.
 
 # Create a Virtual Device
 
@@ -79,7 +76,7 @@ In the next few steps, you will create a virtual device on IoTConnect.  Each vir
 3.  The **Create Device** form opens.  Fill it out and click the **Save** button when finished.
     - Ensure the **Unique Id** field does not contain spaces or special characters
     - You may have only a single option for **Entity** which will likely be different from the one shown
-    - Select the **Template** that matches the name shown below or the one you imported       
+    - Select the **Template** that matches the name shown below      
 
 ![image](https://github.com/avnet-iotconnect/iotc-arduino-pro-portenta-c33-demo/assets/49933990/727e7dd2-728b-4ac9-9541-ac42d118e7af)
 
