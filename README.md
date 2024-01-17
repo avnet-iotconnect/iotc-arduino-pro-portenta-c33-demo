@@ -31,9 +31,18 @@ Avnet also provides libraries and SDKs to accelerate your IoTConnect development
 4. A working installation of the Arduino IDE (v2.2.1 or later).  You may use the cloud based IDE which was not used to create this demo.  Your setup procedures may differ!
 5. A working IoTConnect account **on AWS**.  Request a free trial account if you don't already have one.
 
-# Request a Free IoTConnect Trial Account
-Avnet's IoTConnect platform is available on either AWS or Microsoft Azure although **this demo runs exclusively on the AWS version.**
-The IoTConnect team will release a self-sign-up portal for new customers to request a free trial account.  The scheduled release is Jan 2024.  Until then, you can send an email to [info@iotconnect.io](mailto:info@iotconnect.io) or visit the [Contact us](https://www.avnet.com/wps/portal/us/solutions/iot/contact-us/) page on Avnet.com.
+# IoTConnect Account Setup
+This guide requires an IoTConnect account on AWS.
+
+>**NOTE:**  
+> If you have already created an IoTConnect account on AWS, or were provided an account as part of a training or workshop, skip this section.
+
+If you need to create an account, a free 2-month subscription is available.
+Please follow the 
+[Creating a New IoTConnect Account](https://github.com/avnet-iotconnect/avnet-iotconnect.github.io/blob/main/documentation/iotconnect/subscription/subscription.md)
+guide and ensure to select the [AWS version](https://subscription.iotconnect.io/subscribe?cloud=aws) during registration:
+
+![IoTConnect on AWS](https://github.com/avnet-iotconnect/avnet-iotconnect.github.io/blob/main/documentation/iotconnect/subscription/media/iotc-aws.png)
 
 # Getting Started
 1. Once your prerequisites are obtained, if you are using a local IDE you will need to setup the project by installing the list of Arduino libraries mentioned above.  Use the IDE to install them by clicking on the **'Library Manager Icon'** on the left side of the IDE as shown here:
