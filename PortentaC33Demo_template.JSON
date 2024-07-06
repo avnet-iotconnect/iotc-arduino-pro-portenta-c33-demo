@@ -1,0 +1,62 @@
+{
+    "code": "C33Demo",
+    "name": "PortentaC33Demo",
+    "authType": 2,
+    "attributes": [
+        {
+            "name": "text",
+            "type": "STRING",
+            "description": "Random String",
+            "attributeColor": "#ab149e"
+        },
+        {
+            "name": "Temperature",
+            "type": "INTEGER",
+            "description": "Temp",
+            "unit": "F",
+            "attributeColor": "#f44e3b"
+        }
+    ],
+    "commands": [
+        {
+            "name": "Send Text Msg",
+            "command": "0",
+            "requiredParam": true,
+            "requiredAck": false,
+            "isOTACommand": false
+        },
+        {
+            "name": "Set LED RED",
+            "command": "1",
+            "requiredParam": false,
+            "requiredAck": false,
+            "isOTACommand": false
+        },
+        {
+            "name": "Set LED GREEN",
+            "command": "2",
+            "requiredParam": false,
+            "requiredAck": false,
+            "isOTACommand": false
+        },
+        {
+            "name": "Set LED Blue",
+            "command": "3",
+            "requiredParam": false,
+            "requiredAck": false,
+            "isOTACommand": false
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "XG4EJAS",
+    "greenGrass": "0",
+    "wireless": "0",
+    "properties": {
+        "description": null,
+        "dataFrequency": "15",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
